@@ -6,3 +6,7 @@ softdepend: []
 authors: [CodeSlingers, Septichail, Stealth2800, tacticalsk8er]
 website: http://stealthyone.com/bukkit
 main: com.codeslingersmc.liveprops.LiveProps
+commands:
+  liveprops:
+    description: 'Base plugin command'
+    aliases: [lp]

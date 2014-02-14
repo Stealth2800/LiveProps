@@ -1,5 +1,6 @@
 package com.codeslingersmc.liveprops;
 
+import com.codeslingersmc.liveprops.commands.CmdLiveProps;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class LiveProps extends JavaPlugin {
@@ -18,6 +19,8 @@ public class LiveProps extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        getCommand("liveprops").setExecutor(new CmdLiveProps(this));
+
         getLogger().info("LiveProps v" + getDescription().getVersion() + " by " + getDescription().getAuthors().toString().replace("[", "").replace("]", "") + " ENABLED.");
     }
 
