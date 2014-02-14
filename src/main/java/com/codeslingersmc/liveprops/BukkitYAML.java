@@ -39,4 +39,36 @@ public class BukkitYAML {
         }
     }
 
+    public void setMonsterSpawn(int i){
+        getBukkitYML().set("spawn-limits.monsters", i);
+        //Insert CraftServerAccessor Code Here
+        saveBukkitYML();
+    }
+
+    public void setAnimalSpawn(int i){
+        getBukkitYML().set("spawn-limits.animals", i);
+        //Insert CraftServerAccessor Code Here
+        saveBukkitYML();
+    }
+
+    public void setWaterAnimalSpawn(int i){
+        getBukkitYML().set("spawn-limits.water-animals", i);
+        //Insert CraftServerAccessor Code Here
+        saveBukkitYML();
+    }
+
+    public void setAmbientSpawn(int i){
+        getBukkitYML().set("spawn-limits.ambient", i);
+        //Insert CraftServerAccessor Code Here
+        saveBukkitYML();
+    }
+
+    public void setWarningState(String s){
+        getBukkitYML().set("settings.deprecated-verbose", s);
+        //Insert CraftServerAccessor Code Here
+        saveBukkitYML();
+    }
+
+
+
 }
