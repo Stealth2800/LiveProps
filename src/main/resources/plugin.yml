@@ -1,0 +1,8 @@
+name: ${project.name}
+version: ${project.version}
+description: Live editing for server configuration to avoid restarts and reloads.
+depend: []
+softdepend: []
+authors: [CodeSlingers, Septichail, Stealth2800, tacticalsk8er]
+website: http://stealthyone.com/bukkit
+main: com.codeslingersmc.liveprops.LiveProps
