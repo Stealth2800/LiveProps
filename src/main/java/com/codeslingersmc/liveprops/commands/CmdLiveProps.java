@@ -22,8 +22,8 @@ public class CmdLiveProps implements CommandExecutor {
                     break;
 
                 default:
-                    sender.sendMessage("Type /" + label + " help for help.");
-                    break;
+                    sender.sendMessage("Unknown command. Type /" + label + " help for help.");
+                    return true;
             }
         } else {
             sender.sendMessage("Type /" + label + " help for help.");
@@ -38,7 +38,7 @@ public class CmdLiveProps implements CommandExecutor {
     private void cmdVersion(CommandSender sender, Command command, String label, String[] args) {
         sender.sendMessage(ChatColor.RED + "Live" + ChatColor.DARK_GREEN + "Props" + ChatColor.GOLD + " v" + plugin.getDescription().getVersion());
         sender.sendMessage(ChatColor.GOLD + "Created by " + ChatColor.BOLD + "CodeSlingers");
-        sender.sendMessage(ChatColor.AQUA + "http://aWebsiteThatDoesntExist.com/");
+        sender.sendMessage(ChatColor.AQUA + "http://codeslingersmc.com/");
     }
 
 }
