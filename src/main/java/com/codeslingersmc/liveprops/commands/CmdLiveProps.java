@@ -1,6 +1,7 @@
 package com.codeslingersmc.liveprops.commands;
 
 import com.codeslingersmc.liveprops.LiveProps;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,6 +19,10 @@ public class CmdLiveProps implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length > 0) {
             switch (args[0].toLowerCase()) {
+                case "debug":
+                    cmdDebug(sender, command, label, args);
+                    return true;
+
                 case "version":
                     break;
 
@@ -30,6 +35,22 @@ public class CmdLiveProps implements CommandExecutor {
         }
         cmdVersion(sender, command, label, args);
         return true;
+    }
+
+    /*
+     * Debug command
+     */
+    private void cmdDebug(CommandSender sender, Command command, String label, String[] args) {
+        if (args.length > 1) {
+            switch (args[1].toLowerCase()) {
+                case "toggleonlinemode":
+                    boolean newValue = !Bukkit.getOnlineMode();
+                    plugin.getCraftServerAccessor().setOnlineMode(newValue);
+                    sender.sendMessage("Online mode set to: " + newValue);
+                    return;
+            }
+        }
+        sender.sendMessage("toggleonlinemode");
     }
 
     /*

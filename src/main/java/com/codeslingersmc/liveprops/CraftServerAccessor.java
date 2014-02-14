@@ -4,6 +4,7 @@ import com.codeslingersmc.liveprops.utils.InternalUtils;
 import org.bukkit.Bukkit;
 
 import java.lang.reflect.Field;
+import java.util.logging.Level;
 
 public class CraftServerAccessor {
 
@@ -40,7 +41,7 @@ public class CraftServerAccessor {
             String booleanWrapperName = InternalUtils.getCBClassName("CraftServer.BooleanWrapper");
             Class classBooleanWrapper = null;
             for (Class clazz : classCraftServer.getDeclaredClasses()) {
-                if (clazz.getCanonicalName().equals(booleanWrapperName)) {
+                if (clazz.getCanonicalName() != null && clazz.getCanonicalName().equals(booleanWrapperName)) {
                     classBooleanWrapper = clazz;
                 }
             }
@@ -49,7 +50,7 @@ public class CraftServerAccessor {
 
             Field fieldValue = classBooleanWrapper.getDeclaredField("value");
             fieldValue.setAccessible(true);
-            
+
             fieldValue.set(curOnline, state);
         } catch (Exception ex) {
             plugin.getLogger().severe("Unable to modify online mode.");
