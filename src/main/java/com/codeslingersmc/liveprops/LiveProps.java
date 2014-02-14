@@ -17,8 +17,12 @@ public class LiveProps extends JavaPlugin {
         getDataFolder().mkdir();
     }
 
+    private CraftServerAccessor craftServerAccessor;
+
     @Override
     public void onEnable() {
+        craftServerAccessor = new CraftServerAccessor(this);
+
         getCommand("liveprops").setExecutor(new CmdLiveProps(this));
 
         getLogger().info("LiveProps v" + getDescription().getVersion() + " by " + getDescription().getAuthors().toString().replace("[", "").replace("]", "") + " ENABLED.");
@@ -28,6 +32,10 @@ public class LiveProps extends JavaPlugin {
     public void onDisable() {
         getLogger().info("LiveProps v" + getDescription().getVersion() + " by " + getDescription().getAuthors().toString().replace("[", "").replace("]", "") + " DISABLED.");
         instance = null;
+    }
+
+    public CraftServerAccessor getCraftServerAccessor() {
+        return craftServerAccessor;
     }
 
 }
