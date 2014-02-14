@@ -4,7 +4,7 @@ description: Live editing for server configuration to avoid restarts and reloads
 depend: []
 softdepend: []
 authors: [CodeSlingers, Septichail, Stealth2800, tacticalsk8er]
-website: http://stealthyone.com/bukkit
+website: http://codeslingersmc.com/
 main: com.codeslingersmc.liveprops.LiveProps
 commands:
   liveprops:
