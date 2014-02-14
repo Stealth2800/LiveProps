@@ -1,6 +1,7 @@
 package com.codeslingersmc.liveprops;
 
 import com.codeslingersmc.liveprops.commands.CmdLiveProps;
+import com.codeslingersmc.liveprops.utils.MessageManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class LiveProps extends JavaPlugin {
@@ -18,10 +19,12 @@ public class LiveProps extends JavaPlugin {
     }
 
     private CraftServerAccessor craftServerAccessor;
+    private MessageManager messageManager;
 
     @Override
     public void onEnable() {
         craftServerAccessor = new CraftServerAccessor(this);
+        messageManager = new MessageManager(this);
 
         getCommand("liveprops").setExecutor(new CmdLiveProps(this));
 

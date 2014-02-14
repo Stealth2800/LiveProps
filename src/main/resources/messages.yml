@@ -1,0 +1,7 @@
+tag: '&6[{PLUGINNAME}] '
+notices:
+  plugin_reloaded: '{TAG}&aPlugin data reloaded from the disk.'
+  plugin_saved: '{TAG}&aPlugin data saved to the disk.'
+errors:
+  no_permission: '&cYou do not have permission for this command.'
+  unknown_command: '&cUnknown command. Type &4/%s help &cfor help.'
