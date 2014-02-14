@@ -29,5 +29,4 @@ public final class InternalUtils {
         return Class.forName("org.bukkit.craftbukkit." + getBukkitVersion() + "." + name);
     }
 
-
 }
